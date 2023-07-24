@@ -20,9 +20,15 @@ classifiers = [
 ]
 requires-python = ">=3.9"
 dependencies = [
+    "distrax>=0.1.4",
+    "dm-haiku>=0.0.10",
+    "flax>=0.7.0",
     "jaxlib>=0.4.13",
     "jax>=0.4.13",
-    "ml-collections>=0.1.1"
+    "ml-collections>=0.1.1",
+    "optax>=0.1.5",
+    "surjectors>=0.2.2",
+    "rmsyutls>=0.0.1",
 ]
 dynamic = ["version"]
 
@@ -31,6 +37,7 @@ homepage = "https://github.com/irmlma/uncertainty-quantification-for-mobility-an
 
 [project.scripts]
 uqma-train = "uqma.scripts.uqma_train:main"
+uqma-predict = "uqma.scripts.uqma_predict:main"
 
 
 [tool.hatch.version]

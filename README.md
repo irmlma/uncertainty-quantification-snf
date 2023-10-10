@@ -1,7 +1,7 @@
 # Uncertainty quantification for mobility analysis
 
 [![status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
-[![ci](https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis/actions/workflows/ci.yaml/badge.svg)](https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis/actions/workflows/ci.yaml)
+[![ci](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml/badge.svg)](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml)
 
 ## About
 

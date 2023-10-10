@@ -8,7 +8,7 @@ description = "Uncertainty quantification for mobility analysis"
 authors = [{name = "Simon Dirmeier", email = "sfyrbnd@pm.me"}]
 readme = "README.md"
 license = "Apache-2.0"
-homepage = "https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis"
+homepage = "https://github.com/irmlma/uncertainty-quantification-snf"
 keywords = []
 classifiers = [
     "Development Status :: 1 - Planning",
@@ -33,7 +33,7 @@ dependencies = [
 dynamic = ["version"]
 
 [project.urls]
-homepage = "https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis"
+homepage = "https://github.com/irmlma/uncertainty-quantification-snf"
 
 [project.scripts]
 uqma-train = "uqma.scripts.uqma_train:main"

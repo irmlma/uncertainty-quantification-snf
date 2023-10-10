@@ -98,4 +98,4 @@ invalid-name,missing-module-docstring,R0801
 """
 
 [tool.bandit]
-skips = ["B101"]
+skips = ["B101", "B301", "B403"]

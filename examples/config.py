@@ -13,30 +13,71 @@ def get_config():
         n_flow_layers=[
             new_dict(
                 type="bijection",
-                transformer=new_dict(type="nsf", n_params=64, range_min=-5.0, range_max=5.0),
-                conditioner=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, activation="relu")
+                transformer=new_dict(
+                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                ),
+                conditioner=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    activation="relu",
+                ),
             ),
             new_dict(
                 type="bijection",
-                transformer=new_dict(type="nsf", n_params=64, range_min=-5.0, range_max=5.0),
-                conditioner=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, activation="relu")
+                transformer=new_dict(
+                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                ),
+                conditioner=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    activation="relu",
+                ),
             ),
             new_dict(
                 type="funnel",
                 reduction_factor=0.75,
-                decoder=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, n_params=2, activation="relu"),
-                transformer=new_dict(type="nsf", n_params=64, range_min=-5.0, range_max=5.0),
-                conditioner=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, activation="relu")
+                decoder=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    n_params=2,
+                    activation="relu",
+                ),
+                transformer=new_dict(
+                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                ),
+                conditioner=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    activation="relu",
+                ),
             ),
             new_dict(
                 type="bijection",
-                transformer=new_dict(type="nsf", n_params=64, range_min=-5.0, range_max=5.0),
-                conditioner=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, activation="relu")
+                transformer=new_dict(
+                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                ),
+                conditioner=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    activation="relu",
+                ),
             ),
             new_dict(
                 type="bijection",
-                transformer=new_dict(type="nsf", n_params=64, range_min=-5.0, range_max=5.0),
-                conditioner=new_dict(type="mlp", ndim_hidden_layers=512, n_hidden_layers=2, activation="relu")
+                transformer=new_dict(
+                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                ),
+                conditioner=new_dict(
+                    type="mlp",
+                    ndim_hidden_layers=512,
+                    n_hidden_layers=2,
+                    activation="relu",
+                ),
             ),
         ],
     )
@@ -55,14 +96,14 @@ def get_config():
     )
 
     config.optimizer = new_dict(
-        name='adamw',
+        name="adamw",
         params=new_dict(
             learning_rate=0.0001,
             b1=0.9,
             b2=0.999,
             eps=1e-8,
             weight_decay=1e-8,
-        )
+        ),
     )
 
     return config

@@ -60,15 +60,6 @@ repos:
     args: ["--ignore-missing-imports"]
     files: "(uqma|tests)"
 
-- repo: https://github.com/nbQA-dev/nbQA
-  rev: 1.5.3
-  hooks:
-    - id: nbqa-black
-    - id: nbqa-pyupgrade
-      args: [--py37-plus]
-    - id: nbqa-isort
-      args: ['--profile=black']
-    - id: nbqa-flake8
 
 - repo: https://github.com/jorisroovers/gitlint
   rev: v0.18.0

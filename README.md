@@ -1,11 +1,10 @@
 # Uncertainty quantification for mobility analysis
 
-[![status](http://www.repostatus.org/badges/latest/concept.svg)](http://www.repostatus.org/#concept)
 [![ci](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml/badge.svg)](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml)
 
 ## About
 
-This repository contains code for a method to quantify uncertainty of the predictor.
+This repository contains code for a method to quantify uncertainty of a predictive model.
 
 ## Example usage
 

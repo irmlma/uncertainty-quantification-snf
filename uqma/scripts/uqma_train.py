@@ -38,6 +38,6 @@ def _train(argv):
         pickle.dump(obj, fh, protocol=pickle.HIGHEST_PROTOCOL)
 
 
-def main(*args, **kwargs):
+def main():
     jax.config.config_with_absl()
     app.run(_train)

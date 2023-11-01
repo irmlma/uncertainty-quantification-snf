@@ -26,6 +26,7 @@ dependencies = [
     "jaxlib>=0.4.13",
     "jax>=0.4.13",
     "ml-collections>=0.1.1",
+    "pandas>=2.0.3",
     "optax>=0.1.5",
     "surjectors>=0.2.2",
     "rmsyutls>=0.0.1",
@@ -94,7 +95,7 @@ per-file-ignores = [
 
 [tool.pylint.messages_control]
 disable = """
-invalid-name,missing-module-docstring,R0801
+invalid-name,missing-module-docstring,R0801,missing-function-docstring,too-many-locals
 """
 
 [tool.bandit]

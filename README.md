@@ -6,9 +6,22 @@
 
 This repository contains library code for training a surjective normalizing flow for out-of-distribution detection using epistemic uncertainty estimates.
 
+## Installation
+
+To install the latest GitHub <TAG>, just call the following on the
+command line:
+
+```bash
+pip install git+https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis@<TAG>
+```
+
+This installs the library as well as executables in your current (virtual) environment.
+
 ## Usage
 
-First train the model, using the provided config file, via:
+Having installed as described above you can train and make predictions using the provided exectuables.
+
+Train the model using the provided config file via:
 
 ```{python}
 uqma-train
@@ -31,15 +44,6 @@ uqma-train
 
 where <PARAMS_FILE> is the same file as before, <FILE> is a features file and <OUTFILE> is a file where results are written to.
 
-## Installation
-
-To install the latest GitHub <TAG>, just call the following on the
-command line:
-
-```bash
-pip install git+https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis@<TAG>
-```
-
 ## Citation
 
 If you find our work relevant to your research, please consider citing using the following reference:
@@ -52,9 +56,6 @@ If you find our work relevant to your research, please consider citing using the
   journal={arXiv preprint}
 }
 ```
-
-
-{
 
 ## Author
 

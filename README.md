@@ -1,6 +1,7 @@
 # Uncertainty quantification for mobility analysis
 
 [![ci](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml/badge.svg)](https://github.com/irmlma/uncertainty-quantification-snf/actions/workflows/ci.yaml)
+[![arXiv](https://img.shields.io/badge/arXiv-2311.00377-b31b1b.svg)](https://arxiv.org/abs/2311.00377)
 
 ## About
 
@@ -36,7 +37,7 @@ neural network that has residual connections and was trained using spectral-norm
 To make predictions for epistemic uncertainty estimates, call:
 
 ```{python}
-uqma-train
+uqma-predict
     --params=<PARAMS_FILE> \
     --infile=<FILE> \
     --outfile=<PARAMS_FILE>
@@ -46,14 +47,14 @@ where <PARAMS_FILE> is the same file as before, <FILE> is a features file and <O
 
 ## Citation
 
-If you find our work relevant to your research, please consider citing using the following reference:
+If you find our work relevant to your research, please consider citing
 
 ```
 @article{dirmeier2023uncertain,
   title={Uncertainty quantification and out-of-distribution detection using surjective normalizing flows},
   author={Simon Dirmeier and Ye Hong and Yanan Xin and Fernando Perez-Cruz},
   year={2023},
-  journal={arXiv preprint}
+  journal={arXiv preprint arXiv:2311.00377}
 }
 ```
 

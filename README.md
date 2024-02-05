@@ -18,32 +18,51 @@ pip install git+https://github.com/irmlma/uncertainty-quantification-for-mobilit
 
 This installs the library as well as executables in your current (virtual) environment.
 
-## Usage
+## Example usage
 
-Having installed as described above you can train and make predictions using the provided exectuables.
+Having installed as described above you can train and make predictions using the provided executables.
+
+```bash
+docker build . -t uqma
+```
+
+You can then run the container using
+
+```bash
+docker run uqma --help
+```
 
 Train the model using the provided config file via:
-
-```{python}
-uqma-train
-    --config=configs/config.py \
-    --infile=<FILE> \
-    --outfile=<PARAMS_FILE>
+```bash
+docker run -v <<some path>>:/mnt \
+  --mode=train \
+  --config=/mnt/<<config.py>> \
+  --infile=/mnt/<<train_dataset.csv>> \
+  --outfile=/mnt/<<outfile.pkl>>
 ```
 
-where <FILE> is a COMMA-separated file of numerical values which correspond to the features obtained from transforming inputs through a
-neural network that has residual connections and was trained using spectral-normalization and <PARAMS_FILE> is some file to which parameters are written (see Dirmeier et al. (2023)).
+where
+- `<<some path>` is a local path you want to mount to `/mnt/` to make it accessible to Docker,
+- `<<config.py>>` is a config file that is following the template in `configs/config.py`,
+- `<<train_dataset.csv>>` is a comma-separated file of numerical values which correspond to the features obtained from transforming inputs through a neural network,
+- `<<outfile.pkl>>` is the outfile to which parameter and meta data is saved.
 
 To make predictions for epistemic uncertainty estimates, call:
-
-```{python}
-uqma-predict
-    --params=<PARAMS_FILE> \
-    --infile=<FILE> \
-    --outfile=<PARAMS_FILE>
+```bash
+docker run -v <<some path>>:/mnt \
+  --mode=predict \
+  --config=/mnt/<<config.py>> \
+  --infile=/mnt/<<test_dataset.csv>> \
+  --outfile=/mnt/<<outfile.pkl>> \
+  --checkpopint=/mnt/<<checkpoint>>
 ```
 
-where <PARAMS_FILE> is the same file as before, <FILE> is a features file and <OUTFILE> is a file where results are written to.
+where
+- `<<some path>` is the same as above,
+- `<<config.py>>` is the same as above,
+- `<<test_dataset.csv>>` is a data set for which you want to evaluate if it is OoD,
+- `<<outfile.pkl>>` is the name of the outfile,
+- `<<checkpoint>>` is the parameter file obtained through the training (i.e., in this case `<<outfolder>>/params.pkl`).
 
 ## Citation
 

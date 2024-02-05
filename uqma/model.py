@@ -3,14 +3,12 @@ import haiku as hk
 import jax
 from absl import logging
 from jax import numpy as jnp
-from surjectors import RationalQuadraticSplineMaskedCouplingInferenceFunnel
-from surjectors.distributions.transformed_distribution import (
+from surjectors import (
+    AffineMaskedCouplingInferenceFunnel,
+    Chain,
+    RationalQuadraticSplineMaskedCouplingInferenceFunnel,
     TransformedDistribution,
 )
-from surjectors.surjectors.affine_masked_coupling_inference_funnel import (
-    AffineMaskedCouplingInferenceFunnel,
-)
-from surjectors.surjectors.chain import Chain
 from surjectors.util import make_alternating_binary_mask
 
 
@@ -97,9 +95,9 @@ def _bijector_fn(config):
     return _fn
 
 
-def make_model(config):
+def make_model(config, event_shape):
     def _flow(**kwargs):
-        n_dimension = config.event_shape
+        n_dimension = event_shape
         layers = []
 
         for i, entry in enumerate(config.n_flow_layers):

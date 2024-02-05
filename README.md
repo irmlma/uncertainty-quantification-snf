@@ -9,21 +9,13 @@ This repository contains library code for training a surjective normalizing flow
 
 ## Installation
 
-To install the latest GitHub <TAG>, just call the following on the
-command line:
+To install the latest GitHub <TAG>, just call the following on the command line:
 
 ```bash
-wget https://github.com/irmlma/uncertainty-quantification-snf/archive/refs/tags/<<RELEASE>>.tar.gz
-tar -zxvf <<RELEASE>>.tar.gz
+docker build https://github.com/irmlma/uncertainty-quantification-snf.git#<TAG> -t uqma
 ```
 
-Then build the Docker image using
-
-```bash
-docker build . -t uqma
-```
-
-This installs the library as well as executables in your current (virtual) environment.
+where <TAG> is, e.g., `v0.1.1`.
 
 ## Example usage
 

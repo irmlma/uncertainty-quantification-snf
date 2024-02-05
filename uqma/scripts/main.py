@@ -39,6 +39,8 @@ def _train(FLAGS):
     with open(FLAGS.outfile, "wb") as fh:
         pickle.dump(obj, fh, protocol=pickle.HIGHEST_PROTOCOL)
 
+    return 0
+
 
 def _predict(FLAGS):
     with open(FLAGS.checkpoint, "rb") as fh:
@@ -58,6 +60,8 @@ def _predict(FLAGS):
     with open(FLAGS.outfile, "wb") as fh:
         pickle.dump(lps, fh, protocol=pickle.HIGHEST_PROTOCOL)
 
+    return 0
+
 
 def run(argv):
     del argv
@@ -65,6 +69,7 @@ def run(argv):
         _train(FLAGS)
     else:
         _predict(FLAGS)
+    return 0
 
 
 if __name__ == "__main__":

@@ -2,7 +2,7 @@ import pickle
 
 import jax
 import pandas as pd
-from absl import app, flags
+from absl import app, flags, logging
 from ml_collections import config_flags
 
 from uqma.model import make_model
@@ -69,9 +69,11 @@ def run(argv):
         _train(FLAGS)
     else:
         _predict(FLAGS)
+    logging.info("success")
     return 0
 
 
 if __name__ == "__main__":
+    logging.set_verbosity(logging.INFO)
     jax.config.config_with_absl()
     app.run(run)

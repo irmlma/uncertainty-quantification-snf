@@ -24,7 +24,7 @@ flags.DEFINE_string("outfile", None, "name of the output file")
 flags.mark_flags_as_required(["config", "infile", "outfile"])
 
 
-def _train(FLAGS):
+def _train():
     config = FLAGS.config
 
     features = pd.read_csv(FLAGS.infile).values
@@ -42,7 +42,7 @@ def _train(FLAGS):
     return 0
 
 
-def _predict(FLAGS):
+def _predict():
     with open(FLAGS.checkpoint, "rb") as fh:
         obj = pickle.load(fh)
     config = obj["config"]
@@ -66,9 +66,9 @@ def _predict(FLAGS):
 def run(argv):
     del argv
     if FLAGS.mode == "train":
-        _train(FLAGS)
+        _train()
     else:
-        _predict(FLAGS)
+        _predict()
     logging.info("success")
     return 0
 

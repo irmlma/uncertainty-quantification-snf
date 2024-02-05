@@ -30,6 +30,7 @@ docker run uqma --help
 Train the model using the provided config file via:
 ```bash
 docker run -v <<some path>>:/mnt \
+  uqma \
   --mode=train \
   --config=/mnt/<<config.py>> \
   --infile=/mnt/<<train_dataset.csv>> \
@@ -45,6 +46,7 @@ where
 To make predictions for epistemic uncertainty estimates, call:
 ```bash
 docker run -v <<some path>>:/mnt \
+  uqma \
   --mode=predict \
   --config=/mnt/<<config.py>> \
   --infile=/mnt/<<test_dataset.csv>> \

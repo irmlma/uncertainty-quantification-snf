@@ -28,7 +28,7 @@ jobs:
         run: |          
           docker run -tv $(pwd):/mnt \
             uqma \
-            --mode=predict \ 
+            --mode=predict \
             --config=/mnt/configs/config.py \
             --infile=/mnt/data/x_test.csv \
             --checkpoint=/mnt/params.pkl \

@@ -3,9 +3,10 @@ FROM python:3.11-bookworm
 
 RUN mkdir -p /app
 WORKDIR /app/
-COPY . .
 
-RUN
+COPY uqma .
+COPY pyproject.toml .
+
 RUN pip install .
 
 

@@ -1,10 +1,9 @@
 from collections import namedtuple
 
+from absl import logging
 from jax import jit
 from jax import numpy as jnp
 from rmsyutls import as_batch_iterator
-
-from absl import logging
 
 
 def predict(rng_key, params, model, data, batch_size):

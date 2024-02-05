@@ -17,16 +17,16 @@ jobs:
       - name: Build image
         run: docker build . -t uqma
       - name: Test train
-        run: |          
-          docker run -tv $(pwd):/mnt \
+        run: |
+          docker run -v $(pwd):/mnt \
             uqma \
             --config=/mnt/configs/config.py \
             --infile=/mnt/data/x_test.csv \
             --outfile=/mnt/params.pkl \
             --config.training.n_iter=1
       - name: Test predict
-        run: |          
-          docker run -tv $(pwd):/mnt \
+        run: |
+          docker run -v $(pwd):/mnt \
             uqma \
             --mode=predict \
             --config=/mnt/configs/config.py \

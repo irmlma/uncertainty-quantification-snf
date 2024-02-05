@@ -34,29 +34,31 @@ docker run uqma --help
 
 Train the model using the provided config file via:
 ```bash
-docker run uqma \
+docker run -v <<some path>>:/mnt \
   --mode=train \
-  --config=<<config.py>> \
-  --infile=<<train_dataset.csv>> \
-  --outfile=<<outfile.pkl>>
+  --config=/mnt/<<config.py>> \
+  --infile=/mnt/<<train_dataset.csv>> \
+  --outfile=/mnt/<<outfile.pkl>>
 ```
 
 where
+- `<<some path>` is a local path you want to mount to `/mnt/` to make it accessible to Docker,
 - `<<config.py>>` is a config file that is following the template in `configs/config.py`,
 - `<<train_dataset.csv>>` is a comma-separated file of numerical values which correspond to the features obtained from transforming inputs through a neural network,
 - `<<outfile.pkl>>` is the outfile to which parameter and meta data is saved.
 
 To make predictions for epistemic uncertainty estimates, call:
 ```bash
-docker run uqma \
+docker run -v <<some path>>:/mnt \
   --mode=predict \
-  --config=<<config.py>> \
-  --infile=<<test_dataset.csv>> \
-  --outfile=<<outfile.pkl>> \
-  --checkpopint=<<checkpoint>>
+  --config=/mnt/<<config.py>> \
+  --infile=/mnt/<<test_dataset.csv>> \
+  --outfile=/mnt/<<outfile.pkl>> \
+  --checkpopint=/mnt/<<checkpoint>>
 ```
 
 where
+- `<<some path>` is the same as above,
 - `<<config.py>>` is the same as above,
 - `<<test_dataset.csv>>` is a data set for which you want to evaluate if it is OoD,
 - `<<outfile.pkl>>` is the name of the outfile,

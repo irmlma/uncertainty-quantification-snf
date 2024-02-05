@@ -29,7 +29,6 @@ This installs the library as well as executables in your current (virtual) envir
 
 Having installed as described above you can train and make predictions using the provided executables.
 
-
 You can then run the container using
 
 ```bash

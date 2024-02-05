@@ -22,7 +22,7 @@ jobs:
           docker run -tv $(pwd):/mnt \
             uqma \
             --config=/mnt/configs/config.py \
-            --infile=/mnt/data/x_text.csv \
+            --infile=/mnt/data/x_test.csv \
             --outfile=/mnt/params.pkl \
             --config.training.n_iter=1
 

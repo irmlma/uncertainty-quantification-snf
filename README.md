@@ -13,7 +13,14 @@ To install the latest GitHub <TAG>, just call the following on the
 command line:
 
 ```bash
-pip install git+https://github.com/irmlma/uncertainty-quantification-for-mobility-analysis@<TAG>
+wget https://github.com/irmlma/uncertainty-quantification-snf/archive/refs/tags/<<RELEASE>>.tar.gz
+tar -zxvf <<RELEASE>>.tar.gz
+```
+
+Then build the Docker image using
+
+```bash
+docker build . -t uqma
 ```
 
 This installs the library as well as executables in your current (virtual) environment.
@@ -21,10 +28,6 @@ This installs the library as well as executables in your current (virtual) envir
 ## Example usage
 
 Having installed as described above you can train and make predictions using the provided executables.
-
-```bash
-docker build . -t uqma
-```
 
 You can then run the container using
 

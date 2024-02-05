@@ -5,7 +5,7 @@ from jax import numpy as jnp
 from rmsyutls import as_batch_iterator
 
 
-def predict(rng_key, params, model, data, config):
+def predict(rng_key, params, model, data, batch_size):
     @jit
     def _predict(**batch):
         return model.apply(params, **batch)
@@ -13,7 +13,7 @@ def predict(rng_key, params, model, data, config):
     itr = as_batch_iterator(
         rng_key,
         namedtuple("named_dataset", "y")(data),
-        config.batch_size,
+        batch_size,
         False,
     )
     lps = [None] * itr.num_batches

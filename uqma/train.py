@@ -2,13 +2,14 @@ from collections import namedtuple
 
 import haiku as hk
 import jax
-import jax.numpy as jnp
 import numpy as np
 import optax
 from absl import logging
-from flax.training.early_stopping import EarlyStopping
-from jax import random
+from jax import numpy as jnp
+from jax import random as jr
 from rmsyutls import as_batch_iterators
+
+from uqma.early_stopping import EarlyStopping
 
 
 def train(*, rng_key, data, model, config):
@@ -52,7 +53,7 @@ def train(*, rng_key, data, model, config):
     idxs = train_iter.idxs
     for i in range(config.training.n_iter):
         train_loss = 0.0
-        idxs = random.permutation(next(prng_seq), idxs)
+        idxs = jr.permutation(next(prng_seq), idxs)
         for j in range(train_iter.num_batches):
             batch = train_iter(j, idxs)
             batch_loss, params, opt_state = step(params, opt_state, **batch)

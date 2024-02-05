@@ -22,24 +22,19 @@ requires-python = ">=3.9"
 dependencies = [
     "distrax>=0.1.4",
     "dm-haiku>=0.0.10",
-    "flax>=0.7.0",
     "jaxlib>=0.4.13",
     "jax>=0.4.13",
     "ml-collections>=0.1.1",
     "pandas>=2.0.3",
+    "pyarrow?=15.0.0",
     "optax>=0.1.5",
-    "surjectors>=0.2.2",
+    "surjectors>=0.3.0",
     "rmsyutls>=0.0.1",
 ]
 dynamic = ["version"]
 
 [project.urls]
 homepage = "https://github.com/irmlma/uncertainty-quantification-snf"
-
-[project.scripts]
-uqma-train = "uqma.scripts.uqma_train:main"
-uqma-predict = "uqma.scripts.uqma_predict:main"
-
 
 [tool.hatch.version]
 path = "uqma/__init__.py"

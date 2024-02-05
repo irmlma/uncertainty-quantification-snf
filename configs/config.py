@@ -83,7 +83,7 @@ def get_config():
     )
 
     config.training = new_dict(
-        n_iter=1000,
+        n_iter=2000,
         batch_size=64,
         shuffle_data=True,
         train_val_split=0.9,
@@ -91,8 +91,8 @@ def get_config():
     )
 
     config.prediction = new_dict(
-        batch_size=64,
         rng_seq_key=42,
+        batch_size=64,
     )
 
     config.optimizer = new_dict(

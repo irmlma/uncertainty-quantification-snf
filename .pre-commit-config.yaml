@@ -4,7 +4,7 @@ repos:
     hooks:
     - id: check-docstring-first
     - id: check-added-large-files
-      args: ['--maxkb=1000']
+      args: ['--maxkb=10000']
     - id: check-merge-conflict
     - id: check-toml
     - id: check-yaml

@@ -18,10 +18,11 @@ jobs:
         run: docker build . -t uqma
       - name: Test train
         run: |
-          docker run -v $(pwd):/mnt \
-            uqma \
-            --config=/mnt/configs/config.py \
-            --infile=/mnt/data/x_text.csv \
-            --outfile=/mnt/params.pkl \
-            --config.training.n_iter=1
+          docker run -tv $(pwd):/mnt ubuntu ls /mnt
+#          docker run -v $(pwd):/mnt \
+#            uqma \
+#            --config=/mnt/configs/config.py \
+#            --infile=/mnt/data/x_text.csv \
+#            --outfile=/mnt/params.pkl \
+#            --config.training.n_iter=1
 

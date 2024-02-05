@@ -14,7 +14,7 @@ def get_config():
             new_dict(
                 type="bijection",
                 transformer=new_dict(
-                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                    type="nsf", n_params=8, range_min=-5.0, range_max=5.0
                 ),
                 conditioner=new_dict(
                     type="mlp",
@@ -26,7 +26,7 @@ def get_config():
             new_dict(
                 type="bijection",
                 transformer=new_dict(
-                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                    type="nsf", n_params=8, range_min=-5.0, range_max=5.0
                 ),
                 conditioner=new_dict(
                     type="mlp",
@@ -46,7 +46,7 @@ def get_config():
                     activation="relu",
                 ),
                 transformer=new_dict(
-                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                    type="nsf", n_params=8, range_min=-5.0, range_max=5.0
                 ),
                 conditioner=new_dict(
                     type="mlp",
@@ -58,7 +58,7 @@ def get_config():
             new_dict(
                 type="bijection",
                 transformer=new_dict(
-                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                    type="nsf", n_params=8, range_min=-5.0, range_max=5.0
                 ),
                 conditioner=new_dict(
                     type="mlp",
@@ -70,7 +70,7 @@ def get_config():
             new_dict(
                 type="bijection",
                 transformer=new_dict(
-                    type="nsf", n_params=64, range_min=-5.0, range_max=5.0
+                    type="nsf", n_params=8, range_min=-5.0, range_max=5.0
                 ),
                 conditioner=new_dict(
                     type="mlp",
